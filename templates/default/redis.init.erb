@@ -31,7 +31,7 @@ CLIEXEC=<%= File.join(@bin_path, 'redis-cli') %>
 <% end %>
 <% connection_string  << " -a '#{@requirepass}'" unless @requirepass.nil? %>  
 
-PIDFILE=<%= @piddir %>/redis_${REDISNAME}.pid
+PIDFILE=<%= @piddir %>/redis.pid
 
 if [ ! -d <%= @piddir %> ]; then
     mkdir -p <%= @piddir %>

@@ -20,7 +20,7 @@ daemonize yes
 
 # When running daemonized, Redis writes a pid file in /var/run/redis.pid by
 # default. You can specify a custom pid file location here.
-pidfile <%= @piddir %>/redis_<%=@name%>.pid
+pidfile <%= @piddir %>/redis.pid
 
 # Accept connections on the specified port, default is 6379.
 # If port 0 is specified Redis will not listen on a TCP socket.
@@ -69,7 +69,7 @@ loglevel <%=@loglevel%>
 syslog-enabled <%= "#{@syslogenabled}" %>
 
 # Specify the syslog identity.
-syslog-ident redis-<%=@name%>
+syslog-ident redis
 
 # Specify the syslog facility.  Must be USER or between LOCAL0-LOCAL7.
 syslog-facility <%= "#{@syslogfacility}" %>
