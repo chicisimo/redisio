@@ -44,10 +44,10 @@ redis_instances.each do |current_server|
 
   if job_control == 'initd'
   	service server_name do
-      start_command "/etc/init.d/redis#{server_name} start"
-      stop_command "/etc/init.d/redis#{server_name} stop"
-      status_command "pgrep -lf 'redis.*#{server_name}' | grep -v 'sh'"
-      restart_command "/etc/init.d/redis#{server_name} stop && /etc/init.d/redis#{server_name} start"
+      start_command "/etc/init.d/#{server_name} start"
+      stop_command "/etc/init.d/#{server_name} stop"
+      status_command "pgrep -lf '#{server_name}' | grep -v 'sh'"
+      restart_command "/etc/init.d/#{server_name} stop && /etc/init.d/#{server_name} start"
       supports :start => true, :stop => true, :restart => true, :status => false
   	end
   elsif job_control == 'upstart'
